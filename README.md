@@ -117,7 +117,7 @@ router('/users?display=thumbnail&showComments=true')
 Register a `route` that matches `match` with `action` callback
  - string `match`: the match pattern, you can declare params with `:name` and you can use `*` wildcard, no regex support 
  - function `action` (`ctx`): a function that will be called in case of a match, only the first match action will be called, in case of no matches no function will be called but you always can declare the route `*` that match all possible routes.
- - `object` ctx properties:
+ - object `ctx` properties:
    - string `route`: the match pattern declared in the route
    - string `url`: the original url that matched against `route`
    - string `path`: the original path associated to `url`
