@@ -115,23 +115,23 @@ router('/users?display=thumbnail&showComments=true')
 ## API
 ### router(match, action)
 Register a `route` that matches `match` with `action` callback
- - `string` match: the match pattern, you can declare params with `:name` and you can use `*` wildcard, no regex support 
- - `fn` action (`ctx`): a function that will be called in case of a match, only the first match action will be called, in case of no matches no function will be called but you always can declare the route `*` that match all possible routes.
+ - string `match`: the match pattern, you can declare params with `:name` and you can use `*` wildcard, no regex support 
+ - function `action` (`ctx`): a function that will be called in case of a match, only the first match action will be called, in case of no matches no function will be called but you always can declare the route `*` that match all possible routes.
  - `object` ctx properties:
-   - `string` route: the match pattern declared in the route
-   - `string` url: the original url that matched against `route`
-   - `string` path: the original path associated to `url`
-   - `object` params: the params values declared in `route` variables
-   - `string` query: the query string associated with `url`
+   - string `route`: the match pattern declared in the route
+   - string `url`: the original url that matched against `route`
+   - string `path`: the original path associated to `url`
+   - object `params`: the params values declared in `route` variables
+   - string `query`: the query string associated with `url`
 
 ### router(match, null)
 Cancel the `route` associated with `match` if it exist.
- - `string` match: The old `route` that will be eliminated!
- - `null`: You must pass `null` as the second parameter to cancel the route.
+ - string `match`: The old `route` that will be eliminated!
+ - null: You must pass `null` as the second parameter to cancel the route.
 
 ### router(url)
 Test `url` against all saved routes. The first route that matches it will call action, if no route matches nothing will be done but you always can declare the route `*` that match all possible routes.
- - `string` url: A url that represents the current state of the application, can be extracted from `location.hash` on web browsers, can be extract from the `request` object in servers, or you can make any creative use of the router.
+ - string `url`: A url that represents the current state of the application, can be extracted from `location.hash` on web browsers, can be extract from the `request` object in servers, or you can make any creative use of the router.
 
 ## Tests
 Check if work in your [broser](https://marcodpt.github.io/router/)
