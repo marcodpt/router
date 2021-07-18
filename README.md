@@ -1,6 +1,8 @@
 # Router
 A minimalistic url router for browser, server and whatever use you imagine!
 
+[Tests](https://marcodpt.github.io/router/)
+
 ## Motivation
 Most of routers do too much, and they become useful only in very specific situations. This is bad specially because you don't want to learn a new library for every use case. 
 
@@ -12,7 +14,7 @@ Most routers are difficult to master it! This one you just see the examples and 
 
 ## Example
 ```js
-import {router} from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
+import router from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
 
 const showResult = {route, params} => {
   console.log('match: '+route)
@@ -59,7 +61,7 @@ router('')
 
 ## A Hash Router
 ```js
-import {router} from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
+import router from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
 
 router('/users', showPageUsers)
 router('/user/:id', showPageUser)
@@ -73,7 +75,7 @@ window.addEventListener('hashchange', () => {
 
 ## A Server Router
 ```js
-import {router} from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
+import router from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
 import {server} from '/path/to/some/server.js'
 
 router('GET /users', showPageUsers)
@@ -88,8 +90,8 @@ server.onRequest(req => router(`${req.method} ${req.path}`))
 
 ## A Middleware Example
 ```js
-import {router} from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
-import {query} from 'https://cdn.jsdelivr.net/gh/marcodpt/query/index.js'
+import router from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
+import query from 'https://cdn.jsdelivr.net/gh/marcodpt/query/index.js'
 
 const showQuery = ({query}) => {
   console.log(query)
@@ -132,15 +134,6 @@ Cancel the `route` associated with `match` if it exist.
 ### router(url)
 Test `url` against all saved routes. The first route that matches it will call action, if no route matches nothing will be done but you always can declare the route `*` that match all possible routes.
  - string `url`: A url that represents the current state of the application, can be extracted from `location.hash` on web browsers, can be extract from the `request` object in servers, or you can make any creative use of the router.
-
-## Tests
-Check if work in your [broser](https://marcodpt.github.io/router/)
-
-Or do locally something like
-
-```
-python3 -m http.server 9000
-```
 
 ## Contributing
 Yes please! It is a very simple project with a single file, no guidelines, any

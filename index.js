@@ -3,7 +3,7 @@ const weight = (route) => -100*route.split('/').length +
   route.split('/').reduce((len, item) => len + item.length, 0) +
   10000 * (route.indexOf('*') != -1 ? 1 : 0)
 
-export const router = (url, action) => {
+export default (url, action) => {
   if (action === undefined) {
     return Object.keys(Routes)
       .sort((a, b) => Routes[a].weight - Routes[b].weight)

@@ -1,10 +1,10 @@
-import {router} from 'https://cdn.jsdelivr.net/gh/marcodpt/router/index.js'
+import router from './index.js'
 
-const str = function (X) {
+const str = X => {
   return JSON.stringify(X, undefined, 2)
 }
 
-QUnit.test("routes", function (assert) {
+QUnit.test("routes", assert => {
   var X = null
   var index = 0
   const testRoute = (ctx) => {
